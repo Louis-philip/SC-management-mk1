@@ -138,6 +138,9 @@ export default {
 </script>
 
 <style scoped>
+.app-container {
+  background-color: #141414;
+}
 .edit-input {
   padding-right: 100px;
 }

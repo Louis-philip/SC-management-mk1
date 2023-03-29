@@ -4,7 +4,7 @@
 
     <panel-group @handleSetLineChartData="handleSetLineChartData" />
 
-    <el-row style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">
+    <el-row style="background:#141414;padding:16px 16px 0;margin-bottom:32px;">
       <line-chart :chart-data="lineChartData" />
     </el-row>
 
@@ -99,7 +99,7 @@ export default {
 <style lang="scss" scoped>
 .dashboard-editor-container {
   padding: 32px;
-  background-color: rgb(240, 242, 245);
+  background-color: rgb(20, 20, 20);
   position: relative;
 
   .github-corner {
@@ -110,7 +110,7 @@ export default {
   }
 
   .chart-wrapper {
-    background: #fff;
+    background: #141414;
     padding: 16px 16px 0;
     margin-bottom: 32px;
   }

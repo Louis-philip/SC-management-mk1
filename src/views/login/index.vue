@@ -2,8 +2,12 @@
   <div class="login-container">
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" autocomplete="on" label-position="left">
 
+      <div class="logo">
+        <img src="https://github.com/Louis-philip/SC-Assets/blob/main/Captura%20de%20tela%202023-03-27%20122435.png?raw=true" width="280px">
+      </div>
+
       <div class="title-container">
-        <h3 class="title">Login Form</h3>
+        <h3 class="title" />
       </div>
 
       <el-form-item prop="username">
@@ -13,7 +17,7 @@
         <el-input
           ref="username"
           v-model="loginForm.username"
-          placeholder="Username"
+          placeholder="Usuário"
           name="username"
           type="text"
           tabindex="1"
@@ -31,7 +35,7 @@
             ref="password"
             v-model="loginForm.password"
             :type="passwordType"
-            placeholder="Password"
+            placeholder="Senha"
             name="password"
             tabindex="2"
             autocomplete="on"
@@ -49,12 +53,12 @@
 
       <div style="position:relative">
         <div class="tips">
-          <span>Username : admin</span>
-          <span>Password : any</span>
+          <span />
+          <span />
         </div>
         <div class="tips">
-          <span style="margin-right:18px;">Username : editor</span>
-          <span>Password : any</span>
+          <span style="margin-right:18px;" />
+          <span />
         </div>
 
         <el-button class="thirdparty-button" type="primary" @click="showDialog=true">
@@ -83,14 +87,14 @@ export default {
   data() {
     const validateUsername = (rule, value, callback) => {
       if (!validUsername(value)) {
-        callback(new Error('Please enter the correct user name'))
+        callback(new Error('Usuário incorreto, tente novamente.'))
       } else {
         callback()
       }
     }
     const validatePassword = (rule, value, callback) => {
       if (value.length < 6) {
-        callback(new Error('The password can not be less than 6 digits'))
+        callback(new Error('Senha incorreta, tente novamente'))
       } else {
         callback()
       }
@@ -201,8 +205,6 @@ export default {
 </script>
 
 <style lang="scss">
-/* 修复input 背景不协调 和光标变色 */
-/* Detail see https://github.com/PanJiaChen/vue-element-admin/pull/927 */
 
 $bg:#283443;
 $light_gray:#fff;
@@ -248,23 +250,30 @@ $cursor: #fff;
 </style>
 
 <style lang="scss" scoped>
-$bg:#2d3a4b;
-$dark_gray:#889aa4;
+$bg:#000000;
+$dark_gray:#141414;
 $light_gray:#eee;
+$ic:#03b1fc;
 
 .login-container {
   min-height: 100%;
   width: 100%;
-  background-color: $bg;
+  background-color: $dark_gray;
   overflow: hidden;
+
+  .logo {
+    position: relative;
+    left: 70px;
+  }
 
   .login-form {
     position: relative;
     width: 520px;
     max-width: 100%;
-    padding: 160px 35px 0;
+    padding: 80px 35px 0;
     margin: 0 auto;
     overflow: hidden;
+    background-color: $dark_gray;
   }
 
   .tips {
@@ -281,7 +290,7 @@ $light_gray:#eee;
 
   .svg-container {
     padding: 6px 5px 6px 15px;
-    color: $dark_gray;
+    color: $ic;
     vertical-align: middle;
     width: 30px;
     display: inline-block;
