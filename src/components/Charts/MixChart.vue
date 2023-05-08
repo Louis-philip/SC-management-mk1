@@ -52,7 +52,7 @@ export default {
         return data
       }())
       this.chart.setOption({
-        backgroundColor: '#344b58',
+        backgroundColor: '#141414',
         title: {
           text: 'statistics',
           x: '20',
